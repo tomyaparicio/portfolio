@@ -1,0 +1,6 @@
+* text=auto
+
+# Binarios: git no les toca los saltos de línea.
+*.pdf binary
+*.png binary
+*.jpg binary
