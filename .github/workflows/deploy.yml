@@ -23,7 +23,9 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      # npm install y no npm ci: el lock se genera en Windows y no registra los paquetes
+      # opcionales de Linux, así que npm ci lo rechaza por "fuera de sincronía".
+      - run: npm install --no-audit --no-fund
       - run: npm run build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
